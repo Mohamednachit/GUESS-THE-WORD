@@ -1,0 +1,161 @@
+*{
+    box-sizing: border-box;
+}
+:root{
+    --primary-color:CornflowerBlue;
+}
+body{
+    margin: 0;
+    background-color: #e2eef9;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+    text-align: center;
+    padding: 20px;
+    margin: 0 0 50px;
+    background-color: DarkBlue;
+    color: white;
+}
+.guess-game{
+    text-align: center;
+    width: 1000px;
+    margin: 20px auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    .game-area{
+        .inputs{
+            > div{
+                margin-bottom: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                span{
+                    font-size: 30px;
+                    margin-right: 15px;
+                    font-weight: bold;
+                }
+            }
+            .disabled-inputs{
+                opacity: 0.5;
+                pointer-events: none;
+            }
+            input {
+                margin: 0 5px;
+                width: 60px;
+                height: 60px;
+                text-align: center;
+                font-size: 50px;
+                caret-color: var(--primary-color);
+                background-color: Snow;
+                border: none;
+                border-bottom: 3px solid var(--primary-color);
+                border-radius: 6px;
+                &:focus {
+                    outline-color: var(--primary-color);
+                }
+                &.yes-in-place{
+                    background-color: MediumSpringGreen;
+                    border: MediumSpringGreen;
+                    color: white;
+                }
+                &.not-in-place{
+                    background-color: gold;
+                    border: gold;
+                    color: white;
+                }
+                &.no{
+                    background-color: SlateGray;
+                    border: SlateGray;
+                    color: white;
+                }
+            }
+        }
+        .control{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 500px;
+            margin: 30px auto;
+            gap: 10px;
+            .check{
+                background-color: DarkOrchid;
+                flex: 1;
+            }
+            .hint{
+                background-color: DeepSkyBlue;
+                width: fit-content;
+            }
+            button{
+                border: none;
+                font-size: 25px;
+                padding: 15px 20px;
+                border-radius: 6px;
+                color: white;
+                cursor: pointer;
+                font-weight: bold;
+            }
+            button:disabled{
+                background-color: black;
+                opacity: 0.4;
+                cursor: no-drop;
+            }
+        }
+    }
+    .key-colors{
+        .key-color{
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background-color: white;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            .key{
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                margin-right: 10px;
+                &.in-place{
+                    background-color: MediumSpringGreen;
+                }
+                &.not-in-place{
+                    background-color: gold;
+                }
+                &.no{
+                    background-color: SlateGray;
+                }
+            }
+            .key-text{
+                font-size: 20px;
+                font-weight: bold;
+                color: var(--primary-color);
+            }
+        }
+    }
+}
+.message{
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    span{
+        font-weight: bold;
+        display: block;
+        font-size: 50px;
+        color: Crimson;
+        text-transform: capitalize;
+        margin-top: 10px;
+    }
+    p{
+        margin-top: 15px;
+    }
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+}
